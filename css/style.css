@@ -1,0 +1,158 @@
+/* css root variables. */
+:root {
+  --fs-base: 18px;
+  --fs-14: 0.875rem;
+  --fs-20: 1.25rem;
+  --fs-head: 2.5rem;
+  --fs-64: 4.25rem;
+  --yellow: #ff7900;
+}
+
+/* Base declaration. */
+*,
+html,
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  font-weight: 300;
+  font-size: var(--fs-base);
+  overflow-x: hidden;
+  height: 100%;
+}
+
+/* Global classes */
+.container {
+  max-width: 1148px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.container-form {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.container-shrimp {
+  max-width: 550px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px;
+  border: solid 1px black;
+  border-radius: 25px;
+}
+.bg-image {
+  background: url('../images/formbgimage.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  height: 100%;
+}
+.blur-container {
+  color: white;
+  backdrop-filter: blur(8px);
+  padding: 25px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: none;
+  border-radius: 25px;
+}
+.red {
+  color: red;
+}
+.container-extend {
+  margin: 0 -15px;
+}
+.flex-wrapper {
+  display: flex;
+}
+.flex-just-mid {
+  display: flex;
+  justify-content: center;
+}
+.flex-just-bet {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+}
+ul {
+  list-style: none;
+}
+li{
+  padding-top: 15px;
+  position: relative;
+  margin: 0 20px;
+  text-decoration: none;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+li::before {
+  content: "";
+  position: absolute;
+  left: -20px;
+  height: 10px;
+  width: 10px;
+  border-radius: 100%;
+  border: solid 2px var(--yellow);
+}
+a:hover, button:hover {
+  cursor: pointer;
+}
+
+/* Loginpage styling. */
+.login-main {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Assign1 styling. */
+.content-tile {
+  padding-top: 15px;
+}
+.content-tile:nth-child(even) {
+  display: flex;
+  justify-content: space-between;
+  direction: rtl;
+  text-align: left;
+}
+.content-tile:nth-child(even) .content-tile--text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 20px;
+}
+.content-tile a{
+  width: 50%;
+}
+.arrayImg {
+  width: 100%;
+}
+.content-tile--text {
+  width: 50%;
+}
+.content-tile--text h2{
+  font-size: var(--fs-head);
+  color: var(--yellow);
+}
+.content-tile--button {
+  height: 50px;
+  width: 150px;
+  background-color: white;
+  border: solid 2px var(--yellow);
+}
