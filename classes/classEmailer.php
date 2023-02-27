@@ -77,7 +77,7 @@
         $mail->setFrom($this->fromEmail);
         $mail->addAddress($this->toEmail);
         if (!$this->checkEmail()) {
-          $this->message = "*Invalid Mail Address Provided!";
+          $this->message = "<span class='red'>*Invalid Mail Address Provided!<span>";
           return;
         }
   
@@ -88,7 +88,7 @@
         $mail->AltBody = 'Welcome to the cult!';
 
         $mail->send();
-        $this->message = 'Message has been sent';
+        $this->message = "<span class='green'>Message has been sent</span>";
       }
       catch (Exception $e) {
         $this->message = "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
@@ -118,6 +118,9 @@
         )
       );
       $response = curl_exec($curl);
+      if ($response == NULL) {
+        return FALSE;
+      }
       $validator = json_decode($response);
       curl_close($curl);
       if ($validator->format_valid && $validator->smtp_check) {

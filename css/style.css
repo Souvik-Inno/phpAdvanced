@@ -64,6 +64,9 @@ body {
 .red {
   color: red;
 }
+.green {
+  color: green;
+}
 .container-extend {
   margin: 0 -15px;
 }

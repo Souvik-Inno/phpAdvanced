@@ -30,7 +30,7 @@
     public function fetchData ($url) {
       $client = new Client();
       $response = $client->get($url);
-      $data = json_decode($response->getBody(), true);
+      $data = json_decode($response->getBody(), TRUE);
       return $data;
     }
 
