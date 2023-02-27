@@ -83,7 +83,7 @@
   
         // Content of the mail.
         $mail->isHTML(true);
-        $mail->Subject = 'Subject';
+        $mail->Subject = 'Welcome! Welcome!';
         $mail->Body    = '<strong>Welcome</strong> to the cult!';
         $mail->AltBody = 'Welcome to the cult!';
 

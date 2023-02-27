@@ -41,19 +41,15 @@
      *    Json decoded object required to fetch and store data.
      */
     public function fetchContentData ($data) {
-      for ($i = 0; $i < 16; $i++) {
+      for ($i = 0; $i < count($data['data']); $i++) {
         $field_services = $data['data'][$i]['attributes']['field_services'];
         if ($field_services != NULL) {
           $title = $data['data'][$i]['attributes']['title'];
-          
           $image_url = $data['data'][$i]['relationships']['field_image']['links']['related']['href'];
           $image_data = $this->fetchData($image_url);
           $img_src = 'https://ir-dev-d9.innoraft-sites.com' . $image_data['data']['attributes']['uri']['url'];
-          
           $field_services_processed = $data['data'][$i]['attributes']['field_services']['processed'];
-          
           $explore_url = $data['data'][$i]['attributes']['path']['alias'];
-          
           $this->dataArray += array($i => [$title, $img_src, $field_services_processed, $explore_url]);
         }
       }
