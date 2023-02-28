@@ -126,6 +126,8 @@ a:hover, button:hover {
 /* Assign1 styling. */
 .content-tile {
   padding-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
 }
 .content-tile:nth-child(even) {
   display: flex;
