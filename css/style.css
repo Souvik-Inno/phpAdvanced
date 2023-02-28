@@ -143,6 +143,9 @@ a:hover, button:hover {
 .content-tile a{
   width: 50%;
 }
+.content-tile--text a{
+  width: 100%;
+}
 .arrayImg {
   width: 100%;
 }

@@ -37,22 +37,24 @@
         foreach ($jsonData->dataArray as $jdata) {
           ?>
           <div class='content-tile flex-just-bet'>
-            <?php echo "<a href={$jdata[3]}>"; ?>
-              <img class='arrayImg' title="<?php echo $jdata[0];?>"
-              src=<?php echo $jdata[1];?>>
+            <?php echo "<a href={$jdata['explore_url']}>"; ?>
+              <img class='arrayImg' title="<?php echo $jdata['title'];?>"
+              src=<?php echo $jdata['img_src'];?>>
             <?php echo "</a>"; ?>
             <div class='content-tile--text flex-col'>
-              <?php echo "<h2>{$jdata[0]}</h2>"; ?>
-              <?php echo "<span>{$jdata[2]}</span>"; ?>
+              <?php echo "<a href={$jdata['explore_url']}>"; ?>
+                <?php echo "<h2>{$jdata['title']}</h2>"; ?>
+              <?php echo "</a>"; ?>
+              <?php echo "<span>{$jdata['field_services_processed']}</span>"; ?>
               <button class='content-tile--button'>
-                  <?php echo "<a href={$jdata[3]}>"; ?>
-                    <strong>EXPLORE MORE</strong>
-                  <?php echo "</a>"; ?>
+                <?php echo "<a href={$jdata['explore_url']}>"; ?>
+                  <strong>EXPLORE MORE</strong>
+                <?php echo "</a>"; ?>
               </button>
             </div>
           </div>
-        <?php
-      }
+          <?php
+        }
       ?>
     </div>
   </div>

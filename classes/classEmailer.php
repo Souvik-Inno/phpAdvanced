@@ -119,6 +119,7 @@
       );
       $response = curl_exec($curl);
       if ($response == NULL) {
+        curl_close($curl);
         return FALSE;
       }
       $validator = json_decode($response);
