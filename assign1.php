@@ -11,7 +11,6 @@
 <html>
 
 <!-- Head Starts. -->
-
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,7 +26,6 @@
 </head>
 
 <!-- Body starts here. -->
-
 <body>
   <div class="main">
     <div class="main-container container">
@@ -43,7 +41,7 @@
             </a>
             <div class='content-tile--text flex-col'>
               <a href=<?php echo "{$jdata['explore_url']}";?>>
-                <?php echo "<h2>{$jdata['title']}</h2>";?>
+                <h2><?php echo "{$jdata['title']}";?></h2>
               </a>
               <span><?php echo "{$jdata['field_services_processed']}";?></span>
               <a href=<?php echo "{$jdata['explore_url']}";?>>
@@ -58,15 +56,6 @@
       ?>
     </div>
   </div>
-
-  <script>
-    // Add Base url to all the href generated.
-    $('a[href]').each(function () {
-      var url = $(this).attr('href');
-      url = 'https://ir-dev-d9.innoraft-sites.com' + url;
-      $(this).attr('href', url);
-    });
-  </script>
 </body>
 
 </html>

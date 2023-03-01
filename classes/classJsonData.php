@@ -16,7 +16,7 @@
      *  @var array $dataArray
      *    Stores data retrieved from Json in form of array elements.
      */
-    public $dataArray = array();
+    public $dataArray = [];
 
     /**
      *  Function fetches data from the url.
@@ -49,9 +49,11 @@
           $image_data = $this->fetchData($image_url);
           $img_src = 'https://ir-dev-d9.innoraft-sites.com' . $image_data['data']['attributes']['uri']['url'];
           $field_services_processed = $dataEle['attributes']['field_services']['processed'];
-          $explore_url = $dataEle['attributes']['path']['alias'];
-          array_push($this->dataArray, array("title" => $title, "img_src" => $img_src,
-          "field_services_processed" => $field_services_processed, "explore_url" => $explore_url));
+          // Add base url to href from fetched data. 
+          $field_services_processed = preg_replace('/href="([^"]*)"/i', 'href="'.'https://ir-dev-d9.innoraft-sites.com'.'$1"', $field_services_processed);
+          $explore_url = 'https://ir-dev-d9.innoraft-sites.com' . $dataEle['attributes']['path']['alias'];
+          array_push($this->dataArray, ["title" => $title, "img_src" => $img_src,
+          "field_services_processed" => $field_services_processed, "explore_url" => $explore_url]);
         }
       }
     }
